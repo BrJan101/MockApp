@@ -26,23 +26,11 @@
     </style>
 </head>
 <body>
-    <input type="file" id="image-input" accept="image/*">
     <div id="image-container">
-        <img id="uploaded-image" src="https://imgur.com/a/VgXL8eO" alt="Uploaded Image">
+        <img id="uploaded-image" src="https://i.imgur.com/VgXL8eO.jpg" alt="Uploaded Image">
     </div>
 
     <script>
-        document.getElementById('image-input').addEventListener('change', function(event) {
-            var file = event.target.files[0];
-            if(file) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    document.getElementById('uploaded-image').src = e.target.result;
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-
         window.addEventListener('resize', function() {
             scaleImageToWindowSize();
         });
